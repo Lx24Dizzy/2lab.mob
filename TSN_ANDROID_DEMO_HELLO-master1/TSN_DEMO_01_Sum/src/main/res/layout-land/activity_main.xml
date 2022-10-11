@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Будет линейная компоновка элементов, окно на весь экран,
+     компоненты должны располагаться вертикально и по-центру экрана -->
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:stretchColumns="*">
+
+    <!-- Картинка "androidify" на всю ширину экрана
+         с масштабированием и по высоте 50 пикселей типа "dp" -->
+
+    <!-- Поле ввотда текста c шириной в 10 букв "М",
+         с авторазмером по высоте, любые символы
+         и сверху отступ в 5 dp -->
+    <TableRow>
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_span="6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/picture" />
+    </TableRow>
+
+    <TableRow>
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:text="a="
+            android:gravity="right"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <!-- Поле ввода числа со знаком для "a" -->
+        <EditText
+            android:id="@+id/editText_a"
+            android:inputType="number|text"
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor" />
+
+        <!-- Текстовая надпись справа -->
+        <TextView
+            android:id="@+id/textView3"
+            android:text="b="
+            android:gravity="right"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <!-- Поле ввода числа со знаком для "b" -->
+        <EditText
+            android:id="@+id/editText_b"
+            android:importantForAutofill="no"
+            android:inputType="number|text"
+            tools:ignore="LabelFor,TouchTargetSizeCheck" />
+
+        <!-- Текстовая надпись справа -->
+        <TextView
+            android:id="@+id/textView4"
+            android:gravity="right"
+            android:text="x="
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <!-- Поле ввода числа со знаком для "c" -->
+        <EditText
+            android:id="@+id/editText_x"
+            android:inputType="number|text"
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:id="@+id/buttonSum"
+            android:layout_span="6"
+            android:onClick="onClick"
+            android:text="РЕШИТЬ"
+            tools:ignore="HardcodedText" />
+    </TableRow>
+    <!-- Текстовое поле для ответа на всю ширину экрана,
+         с авторазмером по высоте, по-центру экрана
+         и заданным цветом текста -->
+    <TableRow>
+        <TextView
+            android:id="@+id/textView_sum"
+
+            android:layout_span="6"
+            android:gravity="center"
+            android:text="Нажмите кнопку решить"
+            tools:ignore="HardcodedText" />
+    </TableRow>
+
+ </TableLayout>
